@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+require 'space_invaders'
+require 'space_invaders/app'
+
+SpaceInvaders::App.new.show
