@@ -8,3 +8,13 @@ C:\Users\Bluek\Desktop\GitHub Stuff\Practice Game\Practice Game\bin\Debug\Practi
 C:\Users\Bluek\Desktop\GitHub Stuff\Practice Game\Practice Game\bin\Debug\Practice Game.pdb
 C:\Users\Bluek\Desktop\GitHub Stuff\Practice Game\Practice Game\obj\Debug\Practice Game.exe
 C:\Users\Bluek\Desktop\GitHub Stuff\Practice Game\Practice Game\obj\Debug\Practice Game.pdb
+C:\Users\Bluek\Desktop\GitHub Stuff\GameProgramming\Project0\Practice Game\bin\Debug\Practice Game.exe.config
+C:\Users\Bluek\Desktop\GitHub Stuff\GameProgramming\Project0\Practice Game\bin\Debug\Practice Game.exe
+C:\Users\Bluek\Desktop\GitHub Stuff\GameProgramming\Project0\Practice Game\bin\Debug\Practice Game.pdb
+C:\Users\Bluek\Desktop\GitHub Stuff\GameProgramming\Project0\Practice Game\obj\Debug\Practice Game.csprojResolveAssemblyReference.cache
+C:\Users\Bluek\Desktop\GitHub Stuff\GameProgramming\Project0\Practice Game\obj\Debug\Practice_Game.Form1.resources
+C:\Users\Bluek\Desktop\GitHub Stuff\GameProgramming\Project0\Practice Game\obj\Debug\Practice_Game.Properties.Resources.resources
+C:\Users\Bluek\Desktop\GitHub Stuff\GameProgramming\Project0\Practice Game\obj\Debug\Practice Game.csproj.GenerateResource.Cache
+C:\Users\Bluek\Desktop\GitHub Stuff\GameProgramming\Project0\Practice Game\obj\Debug\Practice Game.csproj.CoreCompileInputs.cache
+C:\Users\Bluek\Desktop\GitHub Stuff\GameProgramming\Project0\Practice Game\obj\Debug\Practice Game.exe
+C:\Users\Bluek\Desktop\GitHub Stuff\GameProgramming\Project0\Practice Game\obj\Debug\Practice Game.pdb
