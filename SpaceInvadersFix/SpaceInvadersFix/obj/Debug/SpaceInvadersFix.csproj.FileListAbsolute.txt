@@ -8,3 +8,13 @@ C:\Users\Bluek\Desktop\GitHub Stuff\SpaceInvadersFix\SpaceInvadersFix\obj\Debug\
 C:\Users\Bluek\Desktop\GitHub Stuff\SpaceInvadersFix\SpaceInvadersFix\obj\Debug\SpaceInvadersFix.csproj.CoreCompileInputs.cache
 C:\Users\Bluek\Desktop\GitHub Stuff\SpaceInvadersFix\SpaceInvadersFix\obj\Debug\SpaceInvadersFix.exe
 C:\Users\Bluek\Desktop\GitHub Stuff\SpaceInvadersFix\SpaceInvadersFix\obj\Debug\SpaceInvadersFix.pdb
+C:\Users\Bluek\Desktop\GitHub Stuff\GameProgramming\SpaceInvadersFix\SpaceInvadersFix\bin\Debug\SpaceInvadersFix.exe.config
+C:\Users\Bluek\Desktop\GitHub Stuff\GameProgramming\SpaceInvadersFix\SpaceInvadersFix\bin\Debug\SpaceInvadersFix.exe
+C:\Users\Bluek\Desktop\GitHub Stuff\GameProgramming\SpaceInvadersFix\SpaceInvadersFix\bin\Debug\SpaceInvadersFix.pdb
+C:\Users\Bluek\Desktop\GitHub Stuff\GameProgramming\SpaceInvadersFix\SpaceInvadersFix\obj\Debug\SpaceInvadersFix.csprojResolveAssemblyReference.cache
+C:\Users\Bluek\Desktop\GitHub Stuff\GameProgramming\SpaceInvadersFix\SpaceInvadersFix\obj\Debug\SpaceInvadersFix.Engine.resources
+C:\Users\Bluek\Desktop\GitHub Stuff\GameProgramming\SpaceInvadersFix\SpaceInvadersFix\obj\Debug\SpaceInvadersFix.Properties.Resources.resources
+C:\Users\Bluek\Desktop\GitHub Stuff\GameProgramming\SpaceInvadersFix\SpaceInvadersFix\obj\Debug\SpaceInvadersFix.csproj.GenerateResource.Cache
+C:\Users\Bluek\Desktop\GitHub Stuff\GameProgramming\SpaceInvadersFix\SpaceInvadersFix\obj\Debug\SpaceInvadersFix.csproj.CoreCompileInputs.cache
+C:\Users\Bluek\Desktop\GitHub Stuff\GameProgramming\SpaceInvadersFix\SpaceInvadersFix\obj\Debug\SpaceInvadersFix.exe
+C:\Users\Bluek\Desktop\GitHub Stuff\GameProgramming\SpaceInvadersFix\SpaceInvadersFix\obj\Debug\SpaceInvadersFix.pdb
