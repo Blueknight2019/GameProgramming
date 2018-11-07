@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Example
 {
-    class GoalSprite:ImageSprite
+    public class GoalSprite:ImageSprite
     {
         public GoalSprite(Image image, int x, int y, int i, int j, bool con):base(image, x , y , i, j, con)
         {

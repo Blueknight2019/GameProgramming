@@ -9,6 +9,11 @@ namespace Example
 {
     public class PhysicsSprite : ImageSprite
     {
+        private bool crate = true;
+        public override bool Crate
+        {
+            get { return crate; }
+        }
         private double targetX;
         public Double TargetX //properties
         {
@@ -48,7 +53,11 @@ namespace Example
 
         public override void Connect()
         {
-            
+            if (SokobanGame.lines[J][I].Equals('G'))
+            {
+                Image = Image.FromFile("gold.jpg");
+                Con = true;
+            }
         }
 
         public PhysicsSprite(Image image, int x, int y, int i, int j, bool con) : base(image, x, y, i, j, con)

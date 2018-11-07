@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Example
 {
-    class Player:AnimatedSprite
+    public class Player:AnimatedSprite
     {
         private double targetX;
         public Double TargetX //properties
@@ -48,6 +48,14 @@ namespace Example
                             }
                         }
                     }
+                    foreach (Sprite child in SokobanGame.Canvas.Children)
+                    {
+                        if (I == child.I && J == child.J && SokobanGame.lines[J][I-1].Equals('X') && child.Crate)
+                        {
+                            targetX += SokobanGame.unitSize;
+                            I++;
+                        }
+                    }
                 }
                 else I++;
             }
@@ -68,6 +76,14 @@ namespace Example
                             }
                         }
                     }
+                    foreach (Sprite child in SokobanGame.Canvas.Children)
+                    {
+                        if (I == child.I && J == child.J && SokobanGame.lines[J][I+1].Equals('X') && child.Crate)
+                        {
+                            targetX -= SokobanGame.unitSize;
+                            I--;
+                        }
+                    }
                 }
                 else I--;
             }
@@ -78,6 +94,14 @@ namespace Example
                 {
                     
                     targetY -= SokobanGame.unitSize;
+                    foreach (Sprite child in SokobanGame.Canvas.Children)
+                    {
+                        if (I == child.I && J == child.J && SokobanGame.lines[J-1][I].Equals('X') && child.Crate)
+                        {
+                            targetY += SokobanGame.unitSize;
+                            J++;
+                        }
+                    }
                     if (!SokobanGame.lines[J-1][I].Equals('X'))
                     {
                         foreach (Sprite child in SokobanGame.Canvas.Children)
@@ -105,6 +129,14 @@ namespace Example
                             {
                                 child.Collide(dir);
                             }
+                        }
+                    }
+                    foreach (Sprite child in SokobanGame.Canvas.Children)
+                    {
+                        if (I == child.I && J == child.J && SokobanGame.lines[J + 1][I].Equals('X') && child.Crate)
+                        {
+                            targetY -= SokobanGame.unitSize;
+                            J--;
                         }
                     }
                 }

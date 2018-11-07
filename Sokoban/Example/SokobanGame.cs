@@ -18,53 +18,15 @@ namespace Example
         ImageSprite mainMenu;
         ImageSprite next;
         int levelNum = 1;
+        bool firstPause = true;
+        TextSprite winText;
+        TextSprite menuText;
+        TextSprite nextText;
 
 
         public SokobanGame():base()
         {
-            
-            ninja = new Player(Image.FromFile("ninja.png"), unitSize, unitSize, unitSize, unitSize, 1, 1, true);
-            Animation move = new Animation();
-            move.IList = new int[] { 0, 1, 2, 3, 4 };
-            move.JList = new int[] { 0, 0, 0, 0, 0 };
-            move.TimeList = new int[] { 1, 1, 1, 1, 1 };
-            ninja.Animations.Add("move", move);
-            Animation stand = new Animation();
-            stand.IList = new int[] { 0, 0, 0, 0, 0 };
-            stand.JList = new int[] { 0, 0, 0, 0, 0 };
-            stand.TimeList = new int[] { 1, 1, 1, 1, 1 };
-            ninja.Animations.Add("stand", stand);
-            lines = System.IO.File.ReadAllLines("Level" + levelNum + ".txt");
-            FindForm().Size = new Size(lines[0].Length * unitSize + 100,lines.Length * unitSize + 100);
-            for (int j=0; j<lines.Length;j++)
-            {
-                for (int i = 0; i < lines[j].Length; i++) 
-                {
-                    char letter = lines[j][i];
-                    if(letter=='X')
-                    {
-                        ImageSprite a = new ImageSprite(Image.FromFile("wall.png"), i*unitSize, j*unitSize, i, j, true);
-                        a.Width = unitSize;
-                        a.Height = unitSize;
-                        Canvas.Children.Add(a);
-                    }
-                    else if (letter == 'G')
-                    {
-                        ImageSprite a = new GoalSprite(Image.FromFile("green.png"), i * unitSize, j * unitSize, i, j, false);
-                        a.Width = unitSize;
-                        a.Height = unitSize;
-                        Canvas.Children.Add(a);
-                    }
-                    else if (letter == 'M')
-                    {
-                        ImageSprite a = new PhysicsSprite(Image.FromFile("crate.jpg"), i * unitSize, j * unitSize, i, j, true);
-                        a.Width = unitSize;
-                        a.Height = unitSize;
-                        Canvas.Children.Add(a);
-                    }
-                }
-            }
-            Canvas.Children.Add(ninja);
+            LoadLevel(1);
         }
 
         public void CheckWin()
@@ -79,25 +41,46 @@ namespace Example
             }
             if (win)
             {
-                paused = false;
-                Console.WriteLine("Win");
+                if (levelNum == 1)
+                {
+                    levelNum = 2;
+                    LoadLevel(2);
+                }
+                else
+                {
+                    winText = new TextSprite("All Levels Complete!", Width / 2, Height / 2, 345, 345, true);
+                    Canvas.Children.Add(winText);
+                }
             }
         }
         public void Pause()
         {
-            mainMenu = new ImageSprite(Image.FromFile("green.png"), Width / 4, Height / 8, -255, -255, true);
-            if(paused) mainMenu.Visible = false;
-            mainMenu.Width = Width /2;
-            mainMenu.Height = Height / 4;
-            Canvas.Children.Add(mainMenu);
+            if (firstPause)
+            {
+                firstPause = false;
+                mainMenu = new ImageSprite(Image.FromFile("green.png"), Width / 4, Height / 8, -255, -255, true);
+                
+                mainMenu.Width = Width / 2;
+                mainMenu.Height = Height / 4;
+                Canvas.Children.Add(mainMenu);
+
+                menuText = new TextSprite("Reset", Width / 4, Height / 8, -255, -255, true);
+                mainMenu.Children.Add(menuText);
 
 
-            next = new ImageSprite(Image.FromFile("FullBlock.png"), Width / 4, Height /8 *5, -269, -255, true);
+                next = new ImageSprite(Image.FromFile("FullBlock.png"), Width / 4, Height / 8 * 5, -269, -255, true);
+                
+                next.Width = Width / 2;
+                next.Height = Height / 4;
+                Canvas.Children.Add(next);
+
+                nextText = new TextSprite("Next Level", Width / 4, Height / 8, -255, -255, true);
+                next.Children.Add(nextText);
+            }
             if (paused) next.Visible = false;
-            next.Width = Width / 2;
-            next.Height = Height / 4;
-            Canvas.Children.Add(next); 
+            if (paused) mainMenu.Visible = false;
             paused = !paused;
+            
             foreach (Sprite child in Canvas.Children)
             {
                 child.Visible = !child.Visible;
@@ -128,59 +111,83 @@ namespace Example
             CheckWin();
         }
 
+        public void LoadLevel(int lvl)
+        {
+            paused = true;
+            lines = System.IO.File.ReadAllLines("Level" + lvl + ".txt");
+            Canvas = new Sprite(0, 0, -255, -255, true);
+            Canvas.Width = lines[0].Length * unitSize;
+            Canvas.Height = lines.Length * unitSize;
+            firstPause = true;
+            ninja = new Player(Image.FromFile("ninja.png"), unitSize, unitSize, unitSize, unitSize, 1, 1, true);
+            Animation move = new Animation();
+            move.IList = new int[] { 0, 1, 2, 3, 4 };
+            move.JList = new int[] { 0, 0, 0, 0, 0 };
+            move.TimeList = new int[] { 1, 1, 1, 1, 1 };
+            ninja.Animations.Add("move", move);
+            Animation stand = new Animation();
+            stand.IList = new int[] { 0, 0, 0, 0, 0 };
+            stand.JList = new int[] { 0, 0, 0, 0, 0 };
+            stand.TimeList = new int[] { 1, 1, 1, 1, 1 };
+            ninja.Animations.Add("stand", stand);
+            for (int j = 0; j < lines.Length; j++)
+            {
+                for (int i = 0; i < lines[j].Length; i++)
+                {
+                    char letter = lines[j][i];
+                    if (letter == 'X')
+                    {
+                        ImageSprite a = new ImageSprite(Image.FromFile("wall.png"), i * unitSize, j * unitSize, i, j, true);
+                        a.Width = unitSize;
+                        a.Height = unitSize;
+                        Canvas.Children.Add(a);
+                    }
+                    else if (letter == 'G')
+                    {
+                        ImageSprite a = new GoalSprite(Image.FromFile("green.png"), i * unitSize, j * unitSize, i, j, false);
+                        a.Width = unitSize;
+                        a.Height = unitSize;
+                        Canvas.Children.Add(a);
+                    }
+                    else if (letter == 'M')
+                    {
+                        ImageSprite a = new PhysicsSprite(Image.FromFile("crate.jpg"), i * unitSize, j * unitSize, i, j, false);
+                        a.Width = unitSize;
+                        a.Height = unitSize;
+                        Canvas.Children.Add(a);
+                    }
+                }
+            }
+            Canvas.Children.Add(ninja);
+            Width = lines[0].Length * unitSize;
+            Height = lines.Length * unitSize;
+            Canvas.XScale = (float)Width / (float)Canvas.Width;
+            Canvas.YScale = (float)Height / (float)Canvas.Height;
+        }
+
+        public override void Resized(EventArgs e)
+        {
+            Canvas.XScale = (float)Width / (float)Canvas.Width;
+            Canvas.YScale = (float)Height / (float)Canvas.Height;
+        }
+
         public override void Mouse_Down(MouseEventArgs e)
         {
             if (!paused && mainMenu.Contains(e.X, e.Y))
             {
-                this.Close();
+                LoadLevel(levelNum);
             }
             if (!paused && next.Contains(e.X, e.Y))
             {
                 levelNum++;
-                Canvas = new Sprite(0, 0, -255, -255, true);
-                ninja = new Player(Image.FromFile("ninja.png"), unitSize, unitSize, unitSize, unitSize, 1, 1, true);
-                Animation move = new Animation();
-                move.IList = new int[] { 0, 1, 2, 3, 4 };
-                move.JList = new int[] { 0, 0, 0, 0, 0 };
-                move.TimeList = new int[] { 1, 1, 1, 1, 1 };
-                ninja.Animations.Add("move", move);
-                Animation stand = new Animation();
-                stand.IList = new int[] { 0, 0, 0, 0, 0 };
-                stand.JList = new int[] { 0, 0, 0, 0, 0 };
-                stand.TimeList = new int[] { 1, 1, 1, 1, 1 };
-                ninja.Animations.Add("stand", stand);
-                lines = System.IO.File.ReadAllLines("Level" + levelNum + ".txt");
-                FindForm().Size = new Size(lines[0].Length * unitSize + 100, lines.Length * unitSize + 100);
-                for (int j = 0; j < lines.Length; j++)
+                try
                 {
-                    for (int i = 0; i < lines[j].Length; i++)
-                    {
-                        char letter = lines[j][i];
-                        if (letter == 'X')
-                        {
-                            ImageSprite a = new ImageSprite(Image.FromFile("wall.png"), i * unitSize, j * unitSize, i, j, true);
-                            a.Width = unitSize;
-                            a.Height = unitSize;
-                            Canvas.Children.Add(a);
-                        }
-                        else if (letter == 'G')
-                        {
-                            ImageSprite a = new GoalSprite(Image.FromFile("green.png"), i * unitSize, j * unitSize, i, j, false);
-                            a.Width = unitSize;
-                            a.Height = unitSize;
-                            Canvas.Children.Add(a);
-                        }
-                        else if (letter == 'M')
-                        {
-                            ImageSprite a = new PhysicsSprite(Image.FromFile("crate.jpg"), i * unitSize, j * unitSize, i, j, true);
-                            a.Width = unitSize;
-                            a.Height = unitSize;
-                            Canvas.Children.Add(a);
-                        }
-                    }
+                    LoadLevel(levelNum);
                 }
-                Canvas.Children.Add(ninja);
-                paused = !paused;
+                catch (Exception yeet)
+                {
+                    this.Close();
+                }
             }
         }
 

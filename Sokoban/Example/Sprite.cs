@@ -11,15 +11,20 @@ namespace Example
 {
     public class Sprite
     {
-        private double width=0;
-        public double Width //properties
+        private bool crate = false;
+        public virtual bool Crate
+        {
+            get { return crate; }
+        }
+        private int width=0;
+        public int Width //properties
         {
             get { return width; }
             set { width = value; }
         }
 
-        private double height=0;
-        public double Height //properties
+        private int height=0;
+        public int Height //properties
         {
             get { return height; }
             set { height = value; }
@@ -45,11 +50,17 @@ namespace Example
             get { return children; }
         }
 
-        private double scale = 1;
-        public double Scale
+        private double xScale = 1;
+        public double XScale
         {
-            get { return scale; }
-            set { scale = value; }
+            get { return xScale; }
+            set { xScale = value; }
+        }
+        private double yScale = 1;
+        public double YScale
+        {
+            get { return yScale; }
+            set { yScale = value; }
         }
         private double angle = 0;
         public double Angle
@@ -120,7 +131,7 @@ namespace Example
             
             
             g.TranslateTransform((float)X, (float)Y);
-            g.ScaleTransform((float)scale, (float)scale);
+            g.ScaleTransform((float)xScale, (float)yScale);
             g.RotateTransform((float)angle);
             Draw(g);
             //do nothing for painting myself
