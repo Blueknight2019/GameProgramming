@@ -1,0 +1,15 @@
+C:\Users\Bluek\Desktop\GitHub Stuff\Platformer\Platformer\bin\Debug\background.png
+C:\Users\Bluek\Desktop\GitHub Stuff\Platformer\Platformer\bin\Debug\cannonnball.jpg
+C:\Users\Bluek\Desktop\GitHub Stuff\Platformer\Platformer\bin\Debug\castlewall.jpg
+C:\Users\Bluek\Desktop\GitHub Stuff\Platformer\Platformer\bin\Debug\knight.jpg
+C:\Users\Bluek\Desktop\GitHub Stuff\Platformer\Platformer\bin\Debug\ninja.PNG
+C:\Users\Bluek\Desktop\GitHub Stuff\Platformer\Platformer\bin\Debug\Platformer.exe.config
+C:\Users\Bluek\Desktop\GitHub Stuff\Platformer\Platformer\bin\Debug\Platformer.exe
+C:\Users\Bluek\Desktop\GitHub Stuff\Platformer\Platformer\bin\Debug\Platformer.pdb
+C:\Users\Bluek\Desktop\GitHub Stuff\Platformer\Platformer\obj\Debug\Platformer.csprojResolveAssemblyReference.cache
+C:\Users\Bluek\Desktop\GitHub Stuff\Platformer\Platformer\obj\Debug\Platformer.Properties.Resources.resources
+C:\Users\Bluek\Desktop\GitHub Stuff\Platformer\Platformer\obj\Debug\Platformer.csproj.GenerateResource.Cache
+C:\Users\Bluek\Desktop\GitHub Stuff\Platformer\Platformer\obj\Debug\Platformer.csproj.CoreCompileInputs.cache
+C:\Users\Bluek\Desktop\GitHub Stuff\Platformer\Platformer\obj\Debug\Platformer.exe
+C:\Users\Bluek\Desktop\GitHub Stuff\Platformer\Platformer\obj\Debug\Platformer.pdb
+C:\Users\Bluek\Desktop\GitHub Stuff\Platformer\Platformer\obj\Debug\Platformer.Engine.resources
